@@ -4,15 +4,15 @@
 #define size 5
 void enqueue(int q[],int *r)
 {
-	int item;
+	int id;
 	if(*r==size-1)
 	printf("Queue full\n");
 	else
 	{
-		printf("Enter the value to be entered.\n");
-		scanf("%d",&item);
+		printf("Enter application number.\n");
+	      scanf("%d",&id);
 		(*r)++;
-		q[*r]=item;
+		q[*r]=id;
 	}
 }
 void dequeue(int q[],int *r, int *f)
@@ -21,7 +21,8 @@ void dequeue(int q[],int *r, int *f)
 	printf("Queue is empty\n");
 	else
 	{
-		printf("Item deleted is : %d\n",q[*f]);
+		printf("Employee assigned : ");
+		printf("%d",q[*f]);
 		(*f)++;
 
 	}
@@ -33,7 +34,7 @@ void display(int q[],int *r, int *f)
 	printf("Queue is empty\n");
 	else
 	{
-		printf("\nThe Queue is: \n");
+		printf("\nThe employees still in queue: \n");
 		for(i=*f;i<=*r;i++)
 		printf("%d\n",q[i]);
 	}
@@ -45,12 +46,12 @@ void main()
 	int f=0;
 	int a;
 	clrscr();
-	printf("\t THE FCFS JOB SCHEDULING IS A LINEAR QUEUE!! \n");
+	printf("\t\t\tTHE QUEUE USED IS \"LINEAR QUEUE!\" \n\t\t\t\t FCFS JOB SCHEDULING!");
 	while(1)
 	{
-		printf("\n1.Enter\n");
-		printf("2.Delete\n");
-		printf("3.Display\n");
+		printf("\n1.To apply for job.\n");
+		printf("2.To Assign Employee.\n");
+		printf("3.To see Employees in list.\n");
 		printf("4.Exit\n");
 		scanf("%d",&a);
 		switch(a)
@@ -80,4 +81,5 @@ void main()
 		}
 	}
 	getch();
+
 }
